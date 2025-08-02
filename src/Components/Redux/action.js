@@ -30,10 +30,24 @@ export const getData = () => dispatch => {
 
   const baseUrl = getBaseUrl();
   const dbUrl = `${baseUrl}/db.json`;
+  const testUrl = `${baseUrl}/test.json`;
   
   console.log('Intentando cargar db.json desde:', dbUrl);
   
-  fetch(dbUrl)
+  // Primero probar el archivo de test
+  fetch(testUrl)
+    .then(r => {
+      console.log('Test URL response:', r.status, r.statusText);
+      if (r.ok) {
+        return r.json();
+      }
+      throw new Error(`Test failed: ${r.status}`);
+    })
+    .then(testData => {
+      console.log('Test successful:', testData);
+      // Si el test funciona, intentar cargar db.json
+      return fetch(dbUrl);
+    })
     .then(r => {
       if (!r.ok) {
         console.error('Error al cargar db.json:', r.status, r.statusText);
@@ -47,7 +61,21 @@ export const getData = () => dispatch => {
     })
     .catch(err => {
       console.error('Error al cargar db.json:', err);
-      dispatch(getDataFailure());
+      // Intentar cargar directamente sin base URL como fallback
+      console.log('Intentando cargar db.json sin base URL...');
+      fetch('/db.json')
+        .then(r => {
+          if (!r.ok) throw new Error(`Fallback failed: ${r.status}`);
+          return r.json();
+        })
+        .then(d => {
+          console.log('db.json cargado con fallback:', d);
+          dispatch(getDataSuccess(d));
+        })
+        .catch(fallbackErr => {
+          console.error('Fallback también falló:', fallbackErr);
+          dispatch(getDataFailure());
+        });
     });
 };
 
