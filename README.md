@@ -1,12 +1,56 @@
-# React + Vite
+# 🍽️ Visual Castle Restaurant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para el restaurante Visual Castle con carrito de compras y integración con WhatsApp.
 
-Currently, two official plugins are available:
+## 🚀 Deploy en GitHub Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### URL del sitio:
+`https://[tu-usuario].github.io/VisualCastleRestaurant/`
 
-## Expanding the ESLint configuration
+### Configuración actual:
+- ✅ GitHub Actions configurado
+- ✅ HashRouter para compatibilidad con GitHub Pages
+- ✅ Base path configurado correctamente
+- ✅ Scripts de redirección para SPA
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔧 Tecnologías utilizadas:
+- React 18
+- Vite
+- Chakra UI
+- React Router DOM
+- Redux
+- GitHub Actions
+
+## 📦 Scripts disponibles:
+```bash
+npm run dev      # Desarrollo local
+npm run build    # Build para producción
+npm run preview  # Preview del build
+npm run lint     # Linting
+```
+
+## 🛠️ Troubleshooting
+
+### Si la página no se muestra:
+1. Verifica que el repositorio se llame exactamente `VisualCastleRestaurant`
+2. Asegúrate de que GitHub Pages esté configurado para la rama `gh-pages`
+3. Revisa los logs en la pestaña Actions de GitHub
+
+### Si las rutas no funcionan:
+- La aplicación usa HashRouter para compatibilidad con GitHub Pages
+- Las URLs tendrán el formato: `/#/ruta`
+
+### Si hay errores de build:
+- Verifica que todas las dependencias estén instaladas
+- Revisa los logs en GitHub Actions
+
+## 📱 Características:
+- 🛒 Carrito de compras
+- 📱 Integración con WhatsApp
+- 🎨 Diseño responsive con Chakra UI
+- 🔄 Estado global con Redux
+- 🚀 Deploy automático con GitHub Actions
+
+## 📞 Contacto:
+- WhatsApp: +502 4889-6134
+- Horario: Lunes a Domingo

@@ -9,6 +9,7 @@ export const AllRoutes = () => {
    <Routes>
     <Route path="/" element={<Home a={"a"} />}/>
     <Route path="/cart" element={<Cart/>}/>
+    <Route path="*" element={<Home a={"a"} />}/>
   </Routes>
   )
 }
