@@ -12,7 +12,7 @@ const getDataFailure =()=>{
 
 // Datos hardcodeados como fallback
 const fallbackData = {
-  "briyani": [
+  "Recados": [
     {
      "img": "https://www.guatemala.com/fotos/201805/Pepian-guatemalteco-acariciamesp1-885x500.jpg",
       "name": "Pepián de Pollo",
